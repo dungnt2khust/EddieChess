@@ -809,12 +809,20 @@ export default {
   border: 1px solid #ccc;
   border-collapse: collapse;
   table-layout: auto;
+  max-width: calc(60px * 8);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.board .vertical {
+  flex-basis: 12.5%;
+  display: flex;
 }
 
 .board .vertical .horizontal {
   border: 1px solid #ccc;
-  height: 60px;
-  width: 60px;
+  flex-basis: 12.5%;
+
 }
 
 .board .vertical .horizontal.dark {

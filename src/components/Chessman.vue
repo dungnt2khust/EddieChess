@@ -1,6 +1,6 @@
 <template>
   <div class="chessman">
-    <img v-if="type" class="chessman__img" height="60" :src="srcImage" alt="" />
+    <img v-if="type" class="chessman__img" :src="srcImage" alt="" />
   </div>
 </template>
 
@@ -164,6 +164,9 @@ export default {
 
 <style>
 .chessman {
-  height: 60px;
+  height: 100%;
+}
+.chessman__img {
+  height: 100%;
 }
 </style>
