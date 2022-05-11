@@ -1,6 +1,16 @@
 <template>
   <div class="chessman">
-    <img v-if="type" class="chessman__img" :src="srcImage" alt="" />
+    <img
+      v-if="type"
+      class="chessman__img"
+      :class="
+        type && type.includes('Black')
+          ? 'chessman__img-black'
+          : 'chessman__img-white'
+      "
+      :src="srcImage"
+      alt=""
+    />
   </div>
 </template>
 
@@ -11,8 +21,8 @@ export default {
   props: {
     type: {
       type: String,
-      default: null,
-    },
+      default: null
+    }
   },
   computed: {
     srcImage() {
@@ -157,16 +167,21 @@ export default {
           break;
       }
       return img;
-    },
-  },
+    }
+  }
 };
 </script>
 
 <style>
 .chessman {
-  height: 100%;
+  width: 100%;
 }
 .chessman__img {
-  height: 100%;
+  width: 100%;
+}
+@media screen and (max-width: 700px) {
+  .chessman__img.chessman__img-white {
+    transform: rotate(180deg);
+  }
 }
 </style>

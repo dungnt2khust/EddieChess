@@ -1,6 +1,6 @@
 <template>
-  <div class="main">
-    <table class="board">
+  <div class="main position-relative">
+    <table class="board position-absolute">
       <tr class="vertical" v-for="vertical in 8" :key="vertical">
         <td
           class="horizontal"
@@ -26,10 +26,10 @@
         </td>
       </tr>
     </table>
-    <div class="controls">
+    <!-- <div class="controls">
       <div class="turn">{{ turn ? "White turn" : "Black turn" }}</div>
       <div class="restart" @click="restart">Restart</div>
-    </div>
+    </div> -->
     <PromotePopup
       v-if="showPromotePopup"
       :type="turn"
@@ -805,24 +805,38 @@ export default {
 </script>
 
 <style>
+.main {
+  width: calc(min(100vh, 100vw));
+  padding-top: calc(min(100vh, 100vw));
+  display:flex;
+  overflow: hidden;
+  min-height: 0;
+}
 .board {
   border: 1px solid #ccc;
   border-collapse: collapse;
   table-layout: auto;
-  max-width: calc(60px * 8);
-  width: 100%;
   display: flex;
   flex-direction: column;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  min-width: 0;
+  min-height: 0;
+  overflow: hidden;
 }
 .board .vertical {
   flex-basis: 12.5%;
   display: flex;
+  min-height: 0;
+  max-height: fit-content;
 }
 
 .board .vertical .horizontal {
   border: 1px solid #ccc;
   flex-basis: 12.5%;
-
+  min-width: 0;
 }
 
 .board .vertical .horizontal.dark {
@@ -850,10 +864,6 @@ export default {
   cursor: pointer;
 }
 
-.main {
-  display: flex;
-  align-items: center;
-}
 
 .controls {
   display: flex;

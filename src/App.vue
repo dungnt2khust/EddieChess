@@ -16,18 +16,24 @@ export default {
 </script>
 
 <style>
+*{
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
 #app {
   font-family: "Avenir", Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #c9c9c9;
-  padding: 20px;
   width: 100vw;
+  height: 100vh;
+  min-height: 0;
 }
 </style>
