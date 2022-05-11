@@ -829,8 +829,6 @@ export default {
 .board .vertical {
   flex-basis: 12.5%;
   display: flex;
-  min-height: 0;
-  max-height: fit-content;
 }
 
 .board .vertical .horizontal {
